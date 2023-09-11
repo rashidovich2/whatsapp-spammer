@@ -43,12 +43,12 @@ def mode0(driver, number, usr, pm):
             for _ in tqdm(range(number), desc='sending.. '):
                 send_message(pm, driver)
 
-            print(color.RED+"[-] done")
+            print(f"{color.RED}[-] done")
             print("\n\n")
 
     except NoSuchElementException:
         # user name not fund in history chat or someting
-        print(color.RED+"[-] error ")
+        print(f"{color.RED}[-] error ")
         print("\n\n")
 
 
@@ -70,12 +70,12 @@ def mode1(driver, number, usr, pm):
                 msg = pm
                 send_message(msg, driver)
 
-            print(color.RED+"[-] done")
+            print(f"{color.RED}[-] done")
             print("\n\n")
 
     except NoSuchElementException:
         # user name not fund in history chat or someting error
-        print(color.RED+"[-] error ")
+        print(f"{color.RED}[-] error ")
         print("\n\n")
 
 
@@ -97,7 +97,7 @@ def start_app():
             mode = input(
                 "[+] Enter mode [ type 1 for method 'Pro' , or just enter] ")
 
-            pm = pm + " "
+            pm = f"{pm} "
 
             # method pro
             if mode == "1":
@@ -109,7 +109,7 @@ def start_app():
     except KeyboardInterrupt:
         print(' EXIT! ')
     except Exception as err:
-        print('[!]' + err)
+        print(f'[!]{err}')
 
     # finally:
     #     driver.quit()
